@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CDT landing page</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="assets/styles/grid.min.css">
+    <link rel="stylesheet" href="assets/styles/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/styles/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+
+<body>
+<video id="video" src="./assets/video/bg.mp4"></video>
+<header>
+    <div class="container">
+        <div class="head">
+            <a href="#" class="logo"><img src="assets/images/logo.png" alt="logo" title="логотип ЦЦТ"></a>
+            <nav>
+                <ul class="memu_list">
+                    <li class="menu_list_item">
+                        <a href="#">О нас</a>
+                    </li>
+                    <li class="menu_list_item">
+                        <a href="#">Проекты</a>
+                    </li>
+                    <li class="menu_list_item">
+                        <a href="#">Структура</a>
+                    </li>
+                    <li class="menu_list_item">
+                        <a href="#">Контакты</a>
+                    </li>
+                    <li class="menu_list_item">
+                        <a href="#">РУС</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <section id="banner">
+        <div class="container banner_container">
+            <div class="banner_text rellax" data-rellax-speed="2">
+                <h2>
+                    Stay Hungry Stay Foolish
+                </h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.
+                </p>
+                <a href="#" class="btn_apply">
+                    APPLY
+                </a>
+            </div>
+            <div class="union rellax" data-rellax-speed="-2">
+                <img src="./assets/images/Union.png" alt="">
+            </div>
+        </div>
+        <div class="side_blocks">
+            <div class="side_block left rellax" data-rellax-horizontal-speed="3" data-rellax-vertical-scroll-axis="x">
+                <img src="./assets/images/leftcont.png" alt="">
+            </div>
+            <div class="side_block right">
+                <img src="./assets/images/rightcont.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="circle_slider">
+
+    </section>
+</main>
+<footer>
+
+</footer>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/rellax.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script>
+    var rellax = new Rellax('.rellax', {
+        // center: true
+        horizontal: true,
+        callback: function (position) {
+            // callback every position change
+            console.log(position);
+        },
+        breakpoints: [576, 768, 1024]
+    });
+
+</script>
+<script>
+    function scrollVideo() {
+        var video = $('#video').get(0),
+            videoLength = video.duration,
+            scrollPosition = $(document).scrollTop();
+
+        video.currentTime = (scrollPosition / ($(document).height() - $(window).height())) * videoLength;
+    }
+
+    $(window).scroll(function(e) {
+        scrollVideo();
+    });
+</script>
+</body>
+</html>
